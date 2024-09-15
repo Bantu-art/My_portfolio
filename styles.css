@@ -1,0 +1,141 @@
+/* Basic reset for margins and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+.hero-section {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the area without stretching */
+    z-index: 1;
+    filter: brightness(1.5) contrast(1.2); /* Increased brightness and contrast */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Darker overlay for better text contrast */
+    z-index: 2;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)); /* Gradient background */
+    backdrop-filter: none; /* Remove blur effect */
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    padding: 10px 0; /* Space around the content */
+}
+
+
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff6600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* 3D text effect */
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Space between links */
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease, letter-spacing 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a i {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff6600;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::before {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #ff6600;
+    transform: translateY(-3px); /* Subtle lift effect */
+}
+
+.nav-links a:hover i {
+    transform: rotate(360deg); /* Icon rotation on hover */
+}
+
+
+.cta-section {
+    position: absolute;
+    bottom: 20px; /* Adjust as needed */
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+}
+
+.cta-button {
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #ff6600, #e65c00); /* Gradient background */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px; /* Rounded button */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #e65c00, #ff6600); /* Inverted gradient on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
